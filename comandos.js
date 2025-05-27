@@ -1,4 +1,4 @@
-const { agregarInventario, registrarVenta, obtenerInventario, obtenerCash } = require('./Inventario');
+const { agregarInventario, registrarVenta, obtenerInventario, obtenerCash } = require('./inventario');
 const { obtenerDolarBlue } = require('./dolar');
 
 
