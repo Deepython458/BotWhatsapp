@@ -39,8 +39,16 @@ function obtenerInventario() {
 
 function obtenerCash() {
     const inversionBase = 130000;
-    const ganancia = datos.cash > inversionBase ? (datos.cash - inversionBase) : 0;
-    return { total: datos.cash, ganancia };
+
+    let data = { cash: 0 };
+
+    if (fs.existsSync(ruta)) {
+        const raw = fs.readFileSync(ruta, 'utf-8');
+        data = JSON.parse(raw);
+    }
+
+    const ganancia = data.cash > inversionBase ? (data.cash - inversionBase) : 0;
+    return { total: data.cash, ganancia };
 }
 
 module.exports = {

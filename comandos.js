@@ -1,5 +1,7 @@
 const { agregarInventario, registrarVenta, obtenerInventario, obtenerCash } = require('./inventario');
 const { obtenerDolarBlue } = require('./dolar');
+const { reiniciarDatos } = require('./estadisticas');
+
 
 
 function mostrarOpciones() {
@@ -63,6 +65,7 @@ function mostrarOpciones() {
         }
         else if (mensaje === '/venta') {
             estados[numero].paso = 'venta';
+        
             return 'Escribí la letra del sabor y el precio, ej: b 150';
         }
         else if (mensaje === '/cash') {
@@ -80,6 +83,11 @@ function mostrarOpciones() {
         else if (mensaje === '/dolar') {
             return obtenerDolarBlue();
         }
+        else if (mensaje === '/reiniciar') {
+            reiniciarDatos();
+            return '🔄 Se reinició la ganancia y las ventas. La tanda fue guardada correctamente.';
+        }
+
         else {
             return 'No entendí. Escribí /opciones para ver los comandos genio.';
         }
