@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Iniciar Bot WhatsApp",
+      "program": "${workspaceFolder}/index.js", // Cambialo si tu archivo principal no es index.js
+      "console": "integratedTerminal"
+    }
+  ]
+}
